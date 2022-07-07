@@ -1,0 +1,107 @@
+.header{
+    height: 10%;
+        background-color:rgb(236, 183, 57);
+        margin-bottom: 30px;
+
+}
+.header-title{
+    text-align: center;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    font-family: 'Mingzat';
+    color: aliceblue;
+}
+.header-cart{
+    text-align: right;
+
+}
+.fa-cart-shopping{
+    font-size: 22px;
+    padding: 20px;
+    color: brown;
+}
+.fa-cart-shopping:hover{
+    color: white;
+    cursor: pointer;
+}
+.wrapper{
+display: flex;
+gap: 30px;
+padding-bottom: 30px;
+
+}
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    transition: 200ms ease-out;
+}
+.modal.active{
+transform: translate(-50%, -50%) scale(1)
+}
+.modal-header{
+padding: 10px 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid black;
+}
+.close{
+cursor: pointer;
+border: none;
+outline: none;
+background: none;
+font-size: 1.50rem;
+font-weight: bold;
+}
+.modal-body{
+padding: 10px 16px;
+}
+#overlay{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.051);
+    pointer-events: none;
+    transition: 200ms ease-out;
+}
+#overlay.active{
+    pointer-events: all;
+    opacity: 1;
+}
+button{
+padding: 10px;
+color: white;
+font-family: 'Mingzat';
+background-color:rgb(236, 183, 57) ;
+border: 1px solid gray;
+border-radius: 5px;
+cursor: pointer;
+}
+.card-title{
+    font-family: 'Mingzat';
+}
+.autor{
+    font-family: 'Mingzat';
+    font-size: 20px;
+}
+.price{
+font-family: 'Mingzat';
+font-size: 18px;
+color: brown;
+font-weight: bold;
+
+}
+.close{
+    color: black;
+}
