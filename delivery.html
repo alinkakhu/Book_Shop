@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <script src="https://kit.fontawesome.com/e4353a2c7e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="delivery.css">
+
+</head>
+
+<body>
+    <div class="container">
+    <h1>Order form</h1>
+<form class = 'order-form'action="">
+<label for="name">Name</label><input  type="text" name = 'name' id="name" minlength="4"
+                  pattern="[A-Za-zА-Яа-я]+"  placeholder required>
+<div class="error-name"></div>
+<label for="surname">Surname</label><input type="text" name='surname' id="surname" minlength="5"
+                  pattern="[A-Za-zА-Яа-я]+" placeholder required>
+<div class="error-surname"></div>
+
+<label for="street">Street</label>
+<input onchange="return(validateStreet());" type="text" id="street" name="street" placeholder=""
+    required><div class="error-street"></div>
+<label for="house">House number</label>
+<input onchange="return(validateHouse());" type="number" id="house" name="housenumber" placeholder="" required><div class="error-house"></div>
+<label for="flat">Flat Number</label>
+<input onchange="return(validateFlat());" type="number" id="flat" name="flatnumber" placeholder="" required><div class="error-flat"></div>
+<label for="date">Delivery date</label><input type="date" name="" id="date" required><div class="error-date"></div>
+<div class="payment-div">
+    <h2>Payment type</h2>
+<label class="payment" for="card">Card</label>
+<input type="radio" value="Card" id="card" name="card" placeholder="">
+
+<label class="payment" for="cash">Cash</label>
+<input type="radio" value="Cash" id="cash" name="card" placeholder="">
+</div>
+
+<div class="dicsount-div">
+    <h2>Choose 2 gifts</h2>
+<div class="gift">
+<input type="checkbox" name="gifts" id="gift"><label class='discount' for="gift">pack as a gift</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="postcard"><label class='discount' for="postcard">add postcard</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="discount"><label class='discount' for="discount">provide 2% discount to the next time</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="pen"><label class='discount' for="pen">branded pen or pencil</label></div></div>
+<button type="submit">Confirm</button>
+</form>
+</div>
+<script src="delivery.js"></script>
+</body>
+
+</html>

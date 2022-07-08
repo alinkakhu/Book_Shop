@@ -1,0 +1,46 @@
+.container {
+
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+
+
+}
+
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: 'Mingzat';
+
+}
+.payment{
+    display: inline;
+}
+.discount{
+display: inline-block;
+}
+.gift{
+    display: flex;
+
+}
+input[type=text],input[type=number] {
+    width: 70%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+}
+input[type=date]{
+padding: 12px;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+}
+input[type=checkbox]{
+margin-right: 10px;
+}
+.invalid{
+border-color: red;
+}
