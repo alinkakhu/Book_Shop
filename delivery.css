@@ -41,6 +41,6 @@ padding: 12px;
 input[type=checkbox]{
 margin-right: 10px;
 }
-.invalid{
+input.invalid{
 border-color: red;
 }

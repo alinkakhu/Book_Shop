@@ -13,32 +13,33 @@
     <div class="container">
     <h1>Order form</h1>
 <form class = 'order-form'action="">
-<label for="name">Name</label><input  type="text" name = 'name' id="name" minlength="4"
+<label for="name">Name</label><input onblur="validateName()" type="text" name = 'name' id="name" minlength="4"
                   pattern="[A-Za-zА-Яа-я]+"  placeholder required>
-<div class="error-name"></div>
-<label for="surname">Surname</label><input type="text" name='surname' id="surname" minlength="5"
+<div class="error"></div>
+<label for="surname">Surname</label><input onblur="validateSurame()" type="text" name='surname' id="surname" minlength="5"
                   pattern="[A-Za-zА-Яа-я]+" placeholder required>
-<div class="error-surname"></div>
+<div class="error"></div>
 
 <label for="street">Street</label>
-<input onchange="return(validateStreet());" type="text" id="street" name="street" placeholder=""
+<input  type="text" id="street" onblur="validateStreet()" name="street"  minlength="5"
+                  pattern="[A-Za-zА-Яа-я0-9 ]+" placeholder=""
     required><div class="error-street"></div>
 <label for="house">House number</label>
-<input onchange="return(validateHouse());" type="number" id="house" name="housenumber" placeholder="" required><div class="error-house"></div>
+<input  type="number" id="house" onblur="validateHouse()" name="housenumber" min="1" pattern="[0-9]+" placeholder="" required><div class="error"></div>
 <label for="flat">Flat Number</label>
-<input onchange="return(validateFlat());" type="number" id="flat" name="flatnumber" placeholder="" required><div class="error-flat"></div>
-<label for="date">Delivery date</label><input type="date" name="" id="date" required><div class="error-date"></div>
+<input  type="number" id="flat" onblur="validateFlat()" name="flatnumber" placeholder="" min="1" pattern="([1-9]|[1-9][0-9-\/]+)" required><div class="error-flat"></div>
+<label for="date">Delivery date</label><input type="date" onchange="validateDate()" name="" id="date" required><div class="error"></div>
 <div class="payment-div">
     <h2>Payment type</h2>
 <label class="payment" for="card">Card</label>
-<input type="radio" value="Card" id="card" name="card" placeholder="">
+<input type="radio" value="Card" id="card" name="card" placeholder="" required >
 
 <label class="payment" for="cash">Cash</label>
 <input type="radio" value="Cash" id="cash" name="card" placeholder="">
 </div>
 
 <div class="dicsount-div">
-    <h2>Choose 2 gifts</h2>
+    <h2>Choose 2 gifts(optional)</h2>
 <div class="gift">
 <input type="checkbox" name="gifts" id="gift"><label class='discount' for="gift">pack as a gift</label></div>
 
@@ -50,7 +51,7 @@
 
 <div class="gift">
 <input type="checkbox" name="gifts" id="pen"><label class='discount' for="pen">branded pen or pencil</label></div></div>
-<button type="submit">Confirm</button>
+<button type="submit" id="submit">Confirm</button>
 </form>
 </div>
 <script src="delivery.js"></script>
