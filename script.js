@@ -15,7 +15,7 @@ cart.innerHTML = `
         <div class = 'cart-wrapper'>
 								</div>
                 <div class ='pay'>To pay: <span class = 'toPay'>0</span></div>
-         <button class='confirm'>Confirm order</button>`
+         <button class='confirm'> <a href="delivery.html">Confirm order</a></button>`
 
 
 cart.className = "header-cart";

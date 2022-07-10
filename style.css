@@ -163,3 +163,7 @@ display: none;
     text-align: left;
     display: block;
 }
+.confirm a{
+    text-decoration: none;
+    color: white;
+}
