@@ -115,6 +115,7 @@ border-radius: 10px;
 }
 .close-form:hover{
     color: gray;
+    cursor: pointer;
 }
 .order.active{
     transform: translate(-50%, -50%) scale(1);
