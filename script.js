@@ -7,15 +7,15 @@ let cart = document.createElement('div');
 
 cart.innerHTML = `
 					<div class="cart-body">
-						<h5 class="cart-title">Your order</h4>
+						<h5 class="main-title">Your order</h4>
 						<div data-cart-empty class="alert alert-secondary" role="alert">
-							You cart is empty
+							Your cart is empty
 						</div>
 
         <div class = 'cart-wrapper'>
 								</div>
                 <div class ='pay'>To pay: <span class = 'toPay'>0</span></div>
-         <button class='confirm'> <a href="delivery.html">Confirm order</a></button>`
+        <button class='confirm'> <a href="delivery.html">Confirm order</a></button> `
 
 
 cart.className = "header-cart";
@@ -36,15 +36,13 @@ h1.innerHTML = "Welcome To The Book Store";
 h1.className = "header-title";
 header.appendChild(h1);
 
-
-
-
 let main = document.createElement('main');
 body.appendChild(main)
 
 let gallerydiv = document.createElement('div');
 gallerydiv.className = 'card'
 main.appendChild(gallerydiv);
+
 
 let books = [{
   'id':1,
@@ -128,19 +126,20 @@ let books = [{
   }
 ]
 
+
 const gallery=books.map(({ title, author, imageLink, description,price,id}) => {
 
-    return  `<div class = 'wrapper' data-id = '${id}'><div class = 'picture'><img
+    return  `<div class = 'main' data-id = '${id}'> <img
       class="gallery__image"
-      src="${imageLink}" width = '250' height = '300'/></div>
+      src="${imageLink}" width = '250' height = '300'/>
 
 <div class = 'description'><h2 class = card-title> ${title}</h2>
 <p class = 'autor'>${author}</p>
 <p class = 'price'>${price}</p>
 
-<button data-cart >Add to cart</button>
+<button class ="add" data-cart >Add to cart</button>
 
-<button data-modal-target='#modal'>Show more</button>   <div class= 'modal' id = 'modal'>
+<button data-modal-target='#modal' class ="showMore">Show more</button>   <div class= 'modal' id = 'modal'>
   <div class = 'modal-header'><h2 class = 'modal-title'>${title}</h2><button data-close-button class = 'close'>&times</button></div>
    <p class = 'modal-body'>${description}</p></div>   </div>
    </div>
@@ -148,25 +147,27 @@ const gallery=books.map(({ title, author, imageLink, description,price,id}) => {
 `;
 
     }).join("")
-gallerydiv.insertAdjacentHTML('afterbegin', gallery);
-const showmore = document.querySelectorAll('[data-modal-target]');
+  gallerydiv.insertAdjacentHTML('afterbegin', gallery);
+
 const close = document.querySelectorAll('[data-close-button]');
+const showmore = document.querySelectorAll('[data-modal-target]');
 
 
-showmore.forEach(button => {
-  button.addEventListener('click', (e) => {
-  //  const modal = document.querySelector(button.dataset.modalTarget);
 
-//  openModal(modal)
-    // e.target.closest('.modal').classList.add('active');
-    let title = e.target.closest('div').querySelector('.card-title');
-    let modal = e.target.closest('div').querySelector('.modal');
-    modal.classList.add('active')
-overlay.classList.add('active');
-    console.log(modal)
+  showmore.forEach(button => {
+    button.addEventListener('click', (e) => {
+      let title = e.target.closest('div').querySelector('.card-title');
+      let modal = e.target.closest('div').querySelector('.modal');
+      let main = e.target.closest('div.main');
+      main.classList.add('active');
+      modal.classList.add('active')
+      overlay.classList.add('active');
 
-})
-})
+
+
+    })
+  })
+
 
 close.forEach(button => {
   button.addEventListener('click', () => {
@@ -187,7 +188,8 @@ function openModal( modal) {
 function closeModal(modal) {
   if (modal == null) return
   modal.classList.remove('active');
-  overlay.classList.remove('active')
+  overlay.classList.remove('active');
+  document.querySelector('.main').classList.remove('active');
 }
 overlay.addEventListener('click', () => {
   const modals = document.querySelectorAll('.modal.active');

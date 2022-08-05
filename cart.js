@@ -4,31 +4,22 @@ const cartWrapper = document.querySelector('.cart-body')
 const payBtn = document.querySelector('.pay')
 function toggleCart() {
     cartWrapper.classList.add('show');
-if (!cartWrapper.classList.contains('show')) {
-        console.log('fdg');
-        cartWrapper.classList.add('show')
-    }
+    cartWrapper.classList.add('show')
+
 
 }
+
 window.addEventListener('click', function (e) {
     if (e.target.hasAttribute('data-cart')) {
-        const card = e.target.closest('.wrapper');
+        const card = e.target.closest('.main');
         const bookInfo = {
             title: card.querySelector('.card-title').textContent,
             author: card.querySelector('.autor').textContent,
             price: card.querySelector('.price').textContent,
             productId: card.getAttribute('data-id')
-
         }
-        toggleCart()
+
          calcCartPrice()
-    // let iteminCart =wrapper.querySelector(`[data-id="${bookInfo.productId}"]`)
-    //     console.log(iteminCart);
-    //     if (iteminCart) {
-    //         const counterElement = iteminCart.querySelector('.quantity');
-    //         counterElement.innerHTML++
-    //         return
-    // //     }
 
         const cartItemHtml = `<div class="cart-item"  data-id="${bookInfo.productId}">
               <div class = 'cart-author'><h4 class= 'author-title'>${bookInfo.author}</h4><button data-close class = 'close'>&times</button></div>
@@ -38,10 +29,8 @@ window.addEventListener('click', function (e) {
                         <div class='quan'> Quantity: <div class ='quantity'>1</div></div>
                        </div>`;
 
-        // wrapper.insertAdjacentHTML('beforebegin', cartItemHtml)
-
         let iteminCart =cartWrapper.querySelector(`[data-id="${bookInfo.productId}"]`)
-        console.log(iteminCart);
+
         if (iteminCart) {
             const counterElement = iteminCart.querySelector('.quantity');
             counterElement.innerHTML++;
@@ -49,7 +38,6 @@ window.addEventListener('click', function (e) {
            return
         } else {
             wrapper.insertAdjacentHTML('beforeend', cartItemHtml);
-            toggleCart()
             toggleCartStatus()
          calcCartPrice()}
 
@@ -59,10 +47,10 @@ window.addEventListener('click', function (e) {
     }
 
 })
+
 window.addEventListener('click',function deleteCartItem(e) {
     if (e.target.hasAttribute('data-close')) {
         const itemToRemove = e.target.closest('.cart-item');
-        console.log(itemToRemove)
         itemToRemove.remove()
         toggleCartStatus()
         calcCartPrice()
@@ -74,14 +62,11 @@ function toggleCartStatus() {
     const wrapper = document.querySelector('.cart-wrapper')
     const cartEmpty = document.querySelector('[data-cart-empty]');
     const confirm = document.querySelector('.confirm')
-    console.log(wrapper.children)
     if (wrapper.children.length > 0) {
-        console.log('full');
         cartEmpty.classList.add('none');
         confirm.classList.add('show');
         payBtn.classList.add('show')
     } else {
-        console.log('emty');
         cartEmpty.classList.remove('none');
         confirm.classList.remove('show');
         payBtn.classList.remove('show')
@@ -89,7 +74,6 @@ function toggleCartStatus() {
 }
 shoppingCart.addEventListener('click', function () {
     if (cartWrapper.classList.contains('show')) {
-        console.log('fdg');
         cartWrapper.classList.remove('show')
     } else {
         cartWrapper.classList.add('show')
@@ -111,6 +95,5 @@ function calcCartPrice() {
 
     })
 
-    console.log(totalPrice)
     document.querySelector('.toPay').textContent = totalPrice
 }
