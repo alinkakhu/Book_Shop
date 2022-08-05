@@ -120,6 +120,7 @@ border-radius: 10px;
 .order.active{
     transform: translate(-50%, -50%) scale(1);
     pointer-events: all;
+    z-index: 5;
 }
 .overlay.active{
 pointer-events: all;
