@@ -29,13 +29,12 @@ window.addEventListener('click', function (e) {
                         <div class='quan'> Quantity: <div class ='quantity'>1</div></div>
                        </div>`;
 
-        let iteminCart =cartWrapper.querySelector(`[data-id="${bookInfo.productId}"]`)
+        let iteminCart = cartWrapper.querySelector(`[data-id="${bookInfo.productId}"]`)
 
         if (iteminCart) {
             const counterElement = iteminCart.querySelector('.quantity');
             counterElement.innerHTML++;
              calcCartPrice()
-           return
         } else {
             wrapper.insertAdjacentHTML('beforeend', cartItemHtml);
             toggleCartStatus()
