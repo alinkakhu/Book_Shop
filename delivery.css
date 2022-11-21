@@ -1,0 +1,133 @@
+.container {
+
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+
+
+}
+body{
+    font-family: 'Mingzat';
+  background-color: #F2F2F2;
+}
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: 'Mingzat';
+
+}
+.payment{
+    display: inline;
+}
+.discount{
+display: inline-block;
+}
+.gift{
+    display: flex;
+
+}
+input[type=text],input[type=number], .house, .flat {
+    width: 70%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+    border-radius: 15px;
+}
+input[type=date]{
+padding: 12px;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+    width: 70%;
+    border-radius:  15px;
+}
+input[type=checkbox]{
+margin-right: 10px;
+}
+input.invalid{
+border-color: red;
+}
+.main-wrapper{
+    display: flex;
+}
+.input-wrapper{
+    width: 50%;
+}
+h1{
+    text-align: center;
+
+}
+button.submit{
+padding: 10px;
+color: black;
+font-family: 'Mingzat';
+background-color: rgb(208, 208, 210);
+border: 1px solid gray;
+border-radius: 10px;
+cursor: pointer;
+width: 150px;
+border: none;
+margin: 20px auto;
+display: block;
+
+}
+
+
+
+button.submit:hover{
+    background-color: rgb(66, 65, 73);
+}
+.order{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 1;
+background-color: rgb(66, 65, 73);
+width: 400px;
+border-radius: 10px;
+
+
+
+}
+
+.order h2{
+    text-align: center;
+    color: white;
+}
+.order p{
+    color: white;
+    padding-left: 20px;
+}
+
+.close-form{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+.close-form:hover{
+    color: gray;
+    cursor: pointer;
+}
+.order.active{
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: all;
+    z-index: 5;
+}
+.overlay.active{
+pointer-events: all;
+}
+.submit.disabled{
+    color: white;
+}
+.submit.disabled:hover {
+    background: rgb(208, 208, 210);
+    cursor: auto}

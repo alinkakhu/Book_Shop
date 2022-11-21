@@ -1,0 +1,327 @@
+.header{
+    height: 10%;
+        background-color:#BFB8AA;
+        margin-bottom: 30px;
+        background-image: url(books.jpg);
+        background-size: auto;
+}
+body{
+  letter-spacing: 0.05em;
+
+}
+.background{
+    position: relative;
+}
+.background:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image: url('nature.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+.header-title{
+  padding-left: 150px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    font-family: "Battersea",
+        Helvetica,
+        Arial,
+        sans-serif;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+   text-shadow: 1px 1px 0 black;
+}
+.header-cart{
+    text-align: right;
+
+}
+.fa-cart-shopping{
+    font-size: 22px;
+    padding: 30px;
+    color: black;
+}
+.fa-cart-shopping:hover{
+    color: white;
+    cursor: pointer;
+}
+.main{
+display: flex;
+gap: 10px;
+padding-bottom: 30px;
+border-radius: 10px;
+padding: 20px;
+cursor: pointer;
+}
+
+
+
+.main.active:hover{
+    background-color: white;
+    box-shadow: none;
+}
+.main:hover {
+    background-color: rgba(0, 0, 0, 0.051);
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    ;
+
+}
+.main:nth-child(odd){
+    margin-right: 180px;
+}
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    transition: 200ms ease-out;
+}
+.modal.active{
+transform: translate(-50%, -50%) scale(1);
+z-index: 3;
+
+
+}
+.modal-header{
+padding: 10px 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid black;
+}
+.close{
+    position: absolute;
+    top: 10px;
+    display: block;
+    right: 15px;
+cursor: pointer;
+border: none;
+outline: none;
+background: none;
+font-size: 16px;
+font-weight: bold;
+width: 20px;
+height: 20px;
+font-size: 20px;
+}
+.close:hover{
+    color: gray;
+}
+.modal-body{
+padding: 10px 16px;
+}
+.overlay{
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+    transition: 200ms ease-out;
+
+}
+.overlay.active{
+pointer-events: all;
+    opacity: 1;
+    z-index: 2;
+
+}
+button.add, .showMore{
+padding: 10px;
+color: white;
+font-family: 'Mingzat';
+background-color: rgb(208, 208, 210);
+border: 1px solid gray;
+border-radius: 10px;
+cursor: pointer;
+width: 100px;
+ position: absolute;
+border: none;
+bottom: 0;
+}
+button.add {
+    margin-left: 110px;
+}
+button.add:hover, button.showMore:hover{
+    background-color:rgb(66, 65, 73);
+}
+.card-title{
+    font-family: 'Mingzat';
+    font-size: 16px;
+    text-align: left;
+    max-width: 200px;
+   margin: 0;
+   line-height: 150%;
+
+
+}
+.autor{
+    font-family: 'Mingzat';
+    font-size: 20px;
+}
+.price{
+font-family: 'Mingzat';
+font-size: 18px;
+color: brown;
+font-weight: bold;
+margin: 0;
+
+}
+.close{
+    color: black;
+
+}
+.cart-body{
+    position: absolute;
+    top:110px;
+    right: 10px;
+    width: 300px;
+    min-height: 150px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+ margin-right: 10px;
+z-index: 1;
+}
+
+.alert{
+
+    text-align: left;
+}
+.cart-author, .price__currency{
+    text-align: left;
+        font-family: 'Mingzat';
+}
+
+   .cart-author{
+    display: flex;
+
+    font-size: 13px;
+   }
+
+.quan{
+    text-align: left;
+}
+.quantity{
+    display: inline;
+    font-weight: bold;
+}
+.alert.none{
+    display: none;
+}
+.cart-body{
+display: none;
+
+}
+.cart-body.show{
+    display: block;
+}
+.confirm{
+    display: none;
+}
+.confirm.show{
+    display: block;
+}
+.pay{
+    display: none;
+}
+.pay.show{
+    text-align: left;
+    display: block;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.confirm a{
+    text-decoration: none;
+    color: white;
+}
+.card{
+    display: flex;
+padding-top: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+justify-content: center;
+padding-bottom: 50px;
+min-width: 1200px;
+
+}
+
+
+.description{
+    position: relative;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+
+}
+p.autor{
+    max-width: 200px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.buttons{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    gap: 10px;
+}
+.main-title{
+    text-align: center;
+    font-family: 'Mingzat';
+}
+.cart-title{
+    text-align: left;
+    max-width: 250px;
+}
+
+.cart-item{
+    position: relative;
+    padding-left: 20px;
+}
+.price__currency{
+color: brown;
+    font-weight: bold;
+}
+.toPay{
+    font-style: italic;
+}
+.confirm.show{
+margin: 10px auto;
+padding: 10px;
+    color: white;
+    font-family: 'Mingzat';
+    background-color: rgb(208, 208, 210);
+    border: 1px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 150px;
+    border: none;
+
+}
+
+button.confirm.show:hover
+ {
+    background-color: rgb(66, 65, 73);
+}
+.alert-secondary{
+text-align: center;
+font-size: 22px;
+font-weight: bold;
+
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <script src="https://kit.fontawesome.com/e4353a2c7e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="delivery.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://kit.fontawesome.com/e4353a2c7e.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mingzat&family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+    <div class="container">
+    <h1>Order form</h1>
+<form class = 'order-form'action="">
+<div class="main-wrapper">
+    <div class="input-wrapper">
+<label for="name">Name</label><input class="name" onblur="validateName()" type="text" name = 'name' id="name" minlength="4"
+                  pattern="[A-Za-zА-Яа-я]+"  placeholder required>
+<div class="error"></div>
+<label for="surname">Surname</label><input class="surname" onblur="validateSurame()" type="text" name='surname' id="surname" minlength="5"
+                  pattern="[A-Za-zА-Яа-я]+" placeholder required>
+<div class="error"></div>
+
+<label for="street">Street</label>
+<input  type="text" id="street" class="street" onblur="validateStreet()" name="street"  minlength="5"
+                  pattern="[A-Za-zА-Яа-я0-9 ]+" placeholder=""
+    required><div class="error-street"></div>
+<label for="house" >House number</label>
+<input   id="house" class="house"    onblur="validateHouse()" pattern="^[1-9]\d*(?: ?(?:[a-z]|[/-] ?\d+[a-z]?))?$" name="housenumber" placeholder="" required><div class="error"></div>
+<label for="flat">Flat Number</label>
+<input id="flat" class="flat" onblur="validateFlat()" name="flatnumber" placeholder="" min="1" pattern="^[1-9]\d*(?: ?(?:[a-z]|[/-] ?\d+[a-z]?))?$" required><div class="error-flat"></div>
+<label for="date">Delivery date</label><input class="date" type="date" onchange="validateDate()" name="" id="date" required><div class="error"></div>
+    </div>
+
+    <div class="checkbox-wrapper">
+<div class="payment-div">
+    <h2>Payment type</h2>
+<label class="payment" for="card">Card</label>
+<input type="radio" value="Card" id="card" name="card" placeholder="" required >
+
+<label class="payment" for="cash">Cash</label>
+<input type="radio" value="Cash" id="cash" name="card" placeholder="">
+</div>
+
+<div class="dicsount-div">
+    <h2>Choose 2 gifts(optional)</h2>
+<div class="gift">
+<input type="checkbox" name="gifts" id="gift"><label class='discount' for="gift">pack as a gift</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="postcard"><label class='discount' for="postcard">add postcard</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="discount"><label class='discount' for="discount">provide 2% discount to the next time</label></div>
+
+<div class="gift">
+<input type="checkbox" name="gifts" id="pen"><label class='discount' for="pen">branded pen or pencil</label></div></div></div></div>
+<button class="submit disabled" id="submit">Confirm</button>
+</form>
+</div>
+
+<div class="order">
+</div>
+<script src="delivery.js"></script>
+</body>
+
+</html>
